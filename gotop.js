@@ -1,7 +1,7 @@
 // 使用jQuery將img插入body中
 (function ($) {
     $("body").append("<img id='goTopButton' style='display:none;z-index:5;cursor:pointer;title='回到頂端'/>");
-    var img = "./DNF男弹药专家.png",     //宣告變數設定圖檔名稱
+    var img = "./Pictures/XDSCU138lg.jpg",     //宣告變數設定圖檔名稱
         location = 0.5,            //按鈕出現在螢幕的高度
         right = 50,                //距離右邊的PX值
         opacity = 0.7,             //預設透明度
