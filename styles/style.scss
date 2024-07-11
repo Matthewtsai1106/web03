@@ -1,0 +1,264 @@
+@import "./format";
+
+
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px 3px #757474;
+
+    div.logo{
+        display: flex;
+        align-items: center;
+        flex: 5 1 400px;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        img{
+            width: 6vw;
+            height: 6vw;
+        }
+        h1{
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    nav{
+        flex: 2 1 400px;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            li{
+                a{
+                    color: #09777d;
+                    text-decoration: none;
+                    font-size: 1.35rem;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:550px) {
+    div.content{
+
+    header{
+        div.logo{
+            margin-left: 0.5rem;
+            img{
+                width: 15vw;
+                height: 15vw;
+            }
+        }
+    }
+}
+}
+
+main{
+    
+
+    section.backImage{
+        min-height: 90vh;
+        width: 100%;
+        background-image: url(../Pictures/splash.jpeg);
+        background-position: center;
+        // background-repeat: no-repeat;   單純維持原圖大小沒有等比例縮放
+        background-size: cover;    //這個語法會照原圖大小等比例縮放
+        position: relative;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        div.fliter{
+        background-color: rgba(0,0,0,0.2);
+        width: 100%;
+        min-height: 90vh;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        }
+        h3{
+            font-size: 3.5rem;
+            color: white;
+            line-height: 5rem;
+            margin: 2rem 0rem;
+        }
+        button.start{
+            background-color: #3df7ec;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;   //變換鼠標型態
+        }
+    }
+    
+    section.second{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2{
+            font-size: 2rem;
+            margin: 2rem 0rem;
+            line-height: 3.5rem;
+        }
+        section.cards{
+            display: flex;
+            // border: 2px solid red;
+            width: 80%;
+            min-height: 80vh;  //如果是固定高height:80vh，在手機瀏覽實頁尾區塊頂部無接點，會跑到頁面中間
+            flex-wrap: wrap;
+
+            div.card{
+                // border: 2px solid blue;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                align-items: center;
+                flex: 1 1 300px;   //內元件的語法~300px要參考上一層容器的flex，如果是橫放就是寬，如果直放就變成高
+                div.image-container{
+                    overflow: hidden;   //設定image-container容器內的img元件效果溢出的部分裁剪掉以適合image-container容器
+                    width: 15vw;
+                    height: 15vw;
+                    border-radius: 50%;
+                    margin: 1rem 0;
+                    img{
+                        width: 15vw;
+                        height: 15vw;
+                        border-radius: 50%;
+                        transition: all 0.4s;
+                        //&繼承父層
+                        &:hover{
+                        transform: scale(1.2);
+                    }
+                    }
+                    
+                }
+
+                h4{
+                    font-size: 2rem;
+                    margin: 1rem 0;
+                }
+                p{
+                    font-size: 1.25rem;
+                    margin: 1rem 0;
+                }
+                a{
+                    text-decoration: none;
+                    padding: 1rem 1.5rem;
+                    background-color: #09777d;
+                    color: white;
+                    font-size: 1.25rem;
+                    margin: 1rem 0;
+                }
+
+            }
+        }
+    }
+}
+@media screen and (max-width:700px){
+    main{
+        section.second{
+            
+            section.cards{
+                div.card{
+                  h4{
+                    line-height: 5rem;
+                  }
+                    img{
+                        width: 40vw;
+                        height: 40vw;
+                        margin-bottom: 1.25rem;
+                    }
+                    p{
+                        line-height: 1.5rem;
+                        margin-bottom: 2rem;
+                    }
+                    a{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 40vh;
+    background-color: rgb(207, 207, 207);
+    div.logo{
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 6vw;
+            height: 6vw;
+            margin: 1rem 1rem;
+        }
+    }
+    nav{
+        width: 35%;
+        margin-bottom: 2rem;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            flex-wrap: wrap;
+            li{
+                flex-basis: 100px;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.35rem;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+    section.links{
+        a{
+            margin: 0 1rem;
+            img{
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+    }
+}
+//scrollbar  捲動軸樣式
+//width
+::-webkit-scrollbar{
+    width: 15px;
+}
+//track 軌道
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+
+//handle 捲動軸
+::-webkit-scrollbar-thumb{
+    background-color: #3df7ef;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #09777d;
+}
